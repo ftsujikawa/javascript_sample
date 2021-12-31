@@ -1,15 +1,21 @@
 function emailValidation() {
-  const form = document.getElementById("form");
-  form.onsubmit = function() {
-    if (form.email.value !== form.email_confirm.value) {
-      const element = document.createElement("p");
-      const message = document.createTextNode("Eメールが一致しません。");
-      element.appendChild(message);
-      form.appendChild(element);
-      element.classList.add("alert");
-      return false;
+  const email = document.getElementById("email");
+  const email_confirm = document.getElementById("email_confirm");
+  const errmsg = document.getElementById("errmsg");
+  const element = document.createElement("p");
+  element.setAttribute("class", "errmsg");
+  const message = document.createTextNode("Eメールが一致しません。");
+  element.appendChild(message);
+  email_confirm.addEventListener("input", e => {
+    if (email.value !== email_confirm.value) {
+      email_confirm.classList.add("bgred");
+      errmsg.parentNode.insertBefore(element, errmsg);
     }
-  }
-}
+    else {
+      email_confirm.classList.remove("bgred");
+      element.parentNode.removeChild(element);
+    }
+  });
+};
 
 window.onload = emailValidation;

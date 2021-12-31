@@ -17,7 +17,6 @@ body {
   text-align: center;
   margin-bottom: 50px;
 }
-
 .contact {
   width: 100%;
   margin-bottom: 30px;
@@ -40,7 +39,6 @@ body {
 .contact_content {
   height: 100px;
 }
-
 .contact_input input, select, textarea {
   border: none;
   width: 99%;
@@ -81,5 +79,11 @@ body {
 .alert {
   color: #fff;
   padding: 20px;
-  background: #d14539;;
+  background: #d14539;
+}
+.bgred {
+  background: rgba(230,169,171,.5);
+}
+.errmsg {
+  color: #d14539;
 }
